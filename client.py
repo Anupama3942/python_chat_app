@@ -5,7 +5,7 @@ from datetime import datetime
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect(('127.0.0.1', 1112))
 
-time = datetime.now().strftime("%H:%M:%S")
+# time = datetime.now().strftime("%H:%M:%S")
 
 name = input("Enter your name: ")
 client.send(name.encode('utf-8'))
@@ -17,7 +17,8 @@ def receive_message():
             data = client.recv(1024)
             if not data:
                 break
-            print(f"{time} server: {data.decode('utf-8')}")
+            time = datetime.now().strftime("%H:%M:%S")
+            print(f"\n{time} server: {data.decode('utf-8')}")
         except:
             break
 
@@ -29,10 +30,13 @@ t = threading.Thread(target=receive_message)
 t.start()
 
 while True:
+    
     msg = input("client: ")
     if msg == "exit":
         break
+    
     client.send(msg.encode('utf-8'))
+    time = datetime.now().strftime("%H:%M:%S")
     save_log(f"[{time}] client: {msg}")
     
 client.close()
