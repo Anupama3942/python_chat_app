@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phase 3</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+
+    <div id="login-screen" class="screen">
+        <div class="login-card">
+            <p class="eyebrow">PHASE 03 — WEBSOCKET</p>
+            <h1>SL<span class="accent">_</span>chat</h1>
+            <p class="sub">Enter your username to join the chat.</p>
+            <input id="username-input" type="text" placeholder="username..." maxlength="20" autocomplete="off" />
+            <button id="join-btn">join_chat()</button>
+            <p id="error-msg" class="error"></p>
+        </div>
+    </div>
+
+    <div id="chat-screen" class="screen hidden">
+        <header class="chat-header">
+            <div class="header-left">
+                <span class="status-dot"></span>
+                <h2>SL<span class="accent">_</span>chat</h2>
+            </div>
+            <div class="header-right">
+                <span id="user-count">0 online</span>
+            </div>
+        </header>
+
+        <div class="chat-body">
+            <aside class="user-sidebar">
+                <p class="sidebar-title">connected</p>
+                <ul id="user-list"></ul>
+            </aside>
+
+            <main class="chat-main">
+                <div id="messages" class="messages"></div>
+                <form id="message-form" class="message-form">
+                    <input id="message-input" type="text" placeholder="write a message..." autocomplete="off" />
+                    <button type="submit">send</button>
+                </form>
+            </main>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
