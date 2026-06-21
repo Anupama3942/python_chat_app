@@ -1,52 +1,56 @@
 # SL Chat — Phase 3 (FastAPI + WebSocket)
 
-## Eka Run Karanne Kohomada?
+## How to Run
 
-### 1. Folder eka yanna
+### 1. Navigate to the project folder
 ```bash
 cd phase3-chat-app
 ```
 
-### 2. Virtual environment ekak hadanna (recommended)
+### 2. Create a virtual environment (recommended)
 ```bash
 python3 -m venv venv
 source venv/bin/activate      # Windows: venv\Scripts\activate
 ```
 
-### 3. Dependencies install karanna
+### 3. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Server eka start karanna
+### 4. Start the server
 ```bash
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-### 5. Browser eka open karanna
+### 5. Open the application in your browser
 ```
 http://127.0.0.1:8000
 ```
 
-Tab/window godak open karala, username wenas wenas danna —
-real-time chat eka test karanna puluwan.
+Open multiple browser tabs or windows and use different usernames to test the real-time chat functionality.
 
-## LAN ekema thawa kenek ekka test karanna
+## Testing with Another Device on the Same LAN
 
-1. Oyage computer eke IP address eka hoyaganna:
+1. Find your computer's IP address:
    - Mac/Linux: `ifconfig` or `ip addr`
    - Windows: `ipconfig`
-2. Thawa kenekta `http://<oyage-ip>:8000` kiyala denna
-   (okkoma WiFi/network ekema thiyenna one).
+
+2. Share the following URL with another user:
+   ```
+   http://<your-ip>:8000
+   ```
+
+3. Ensure both devices are connected to the same Wi-Fi network or local network.
 
 ## File Structure
 
-```
+```text
 phase3-chat-app/
-├── main.py            # FastAPI server + WebSocket logic
+├── main.py             # FastAPI server + WebSocket logic
 ├── requirements.txt
 └── static/
-    ├── index.html      # Chat UI
-    ├── style.css        # Styling
-    └── script.js         # WebSocket client logic
+    ├── index.html      # Chat user interface
+    ├── style.css       # Styling
+    └── script.js       # WebSocket client logic
 ```
